@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+
+<form method="post">
+    <fieldset style="width:30px;">
+        <legend style="text-align:center">Create Account</legend>
+        username: <input type="text" id="username" name="username"><br><br>
+        password: <input type="password" id="password" name="password"><br><br>
+        <div style="text-align:right;">
+        <input type="button" value="Enter" onclick="myFunction()"/>
+        <input type="reset" value="Reset"/>
+        </div>
+    </fieldset>
+<script>
+    function myFunction()
+    {
+       var username1 = document.getElementById('username').value;
+       var password1 = document.getElementById('password').value;
+       var terminal = username + password;
+       alert(terminal);
+    }
+</script>
+</form>
+</body>
+</html>

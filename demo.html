@@ -5,20 +5,17 @@
     <title>demo</title>
 </head>
 <body>
-<form>
-  First name:<br>
-  <input type="text" name="firstname" value="Mickey">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Mouse">
-  <br>
-  number1:
-  <input type="radio" name="number1" value="một">
-  number2:
-  <input type="button" name="number2" value="haimột">
-  <br>
-  <br><br>
-  <input type="submit" value="Submit">
+<form method="post" action="https://www.google.com.vn/">
+    <input type="text" name="q"/>
+    <input type="submit" value="Tìm kiếm"/><br><br>
+    <textarea cols="20" rows="10"></textarea><br><br>
+    <select name="city" multiple style="width:100%;height:100%;">
+        <option value="HN">Hà Nội</option>
+        <option value="HP">Hải Phòng</option>
+        <option value="HU">Huế</option>
+        <option value="DN">Đà Nẵng</option>
+        <option value="SG">Sài Gòn</option>
+    </select>
 </form>
 </body>
 </html>
