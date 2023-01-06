@@ -1,3 +1,3 @@
-function helloC12(){
-    alert("xin chào c12");
+function myFunction(){
+    alert("xin chào");
 }
