@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>demo</title>
-</head>
 <body>
-<form method="post" action="https://www.google.com.vn/">
-    <input type="text" name="q"/>
-    <input type="submit" value="Tìm kiếm"/><br><br>
-    <textarea cols="20" rows="10"></textarea><br><br>
-    <select name="city" multiple style="width:100%;height:100%;">
-        <option value="HN">Hà Nội</option>
-        <option value="HP">Hải Phòng</option>
-        <option value="HU">Huế</option>
-        <option value="DN">Đà Nẵng</option>
-        <option value="SG">Sài Gòn</option>
-    </select>
-</form>
+<p  onclick="do_something()">click me</p>
+<p id="demo" >click</p>
 </body>
+</head>
 </html>
+<script>
+    function do_something(){
+        alert("xin chào codegym");
+    }
+    var demo = document.getElementById("demo");
+    demo.addEventListenr('click',mass);
+    function mass(){
+        alert("hello world");
+    }
+</script>

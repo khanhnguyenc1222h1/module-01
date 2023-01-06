@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị đầu ra</title>
+</head>
+<body>
+<p id="message1"></p>
+<p id="message2"></p>
+<p id="message3"></p>
+<button type="button" onclick="myClick1()">Click me1</button>
+<button type="button" onclick="myClick2()">Click me2</button>
+<button type="button" onclick="myClick3()">Click me3</button>
+<script>
+  function myClick1() {
+    document.getElementById("message1").innerHTML = "xin chào 1";
+    console.log("xin chào 1");
+  }
+  function myClick2(){
+    document.write("xin chào 2");
+  }
+  function myClick3(){
+    console.log("xin chào 2");
+  }
+
+
+</script>
+
+</body>
+</html>
