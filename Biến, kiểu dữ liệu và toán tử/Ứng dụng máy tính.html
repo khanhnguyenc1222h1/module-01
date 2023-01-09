@@ -14,7 +14,6 @@
   <input type="button" id="mul" onclick="myMul()" value="Multiplication(*)">
   <input type="button" id="div" onclick="myDiv()" value="Division(/)">
 </form>
-<h2>Result:</h2>
 <p id="result"></p>
 <script>
   function myAdd(){
@@ -24,7 +23,7 @@
         let numberTwo = parseInt(inputNumberTwo);
         let result;
         result = numberOne + numberTwo;
-        document.getElementById("result").innerHTML = result;
+        document.getElementById("result").innerHTML = "Result Addition: " + result;
   }
   function mySub(){
     let inputNumberOne = document.getElementById("numberOne").value;
@@ -33,7 +32,7 @@
     let numberTwo = parseInt(inputNumberTwo);
     let result;
     result = numberOne - numberTwo;
-    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").innerHTML = "Result Subtraction: " + result;
   }
   function myMul(){
     let inputNumberOne = document.getElementById("numberOne").value;
@@ -42,7 +41,7 @@
     let numberTwo = parseInt(inputNumberTwo);
     let result;
     result = numberOne * numberTwo;
-    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").innerHTML = "Result Multiplication: " + result;
   }
   function myDiv(){
     let inputNumberOne = document.getElementById("numberOne").value;
@@ -51,7 +50,7 @@
     let numberTwo = parseInt(inputNumberTwo);
     let result;
     result = numberOne / numberTwo;
-    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").innerHTML = "Result Division: " + result;
   }
 </script>
 </body>
