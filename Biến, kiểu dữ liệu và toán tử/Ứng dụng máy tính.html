@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<form>
+  <h1>Caculator</h1>
+  <input type="number" id="numberOne" placeholder="nhập số thứ nhất">
+  <input type="number" id="numberTwo" placeholder="nhập số thứ hai"><br><br>
+  <input type="button" id="add" onclick="myAdd()" value="Addition(+)">
+  <input type="button" id="sub" onclick="mySub()" value="Subtraction(-)">
+  <input type="button" id="mul" onclick="myMul()" value="Multiplication(*)">
+  <input type="button" id="div" onclick="myDiv()" value="Division(/)">
+</form>
+<h2>Result:</h2>
+<p id="result"></p>
+<script>
+  function myAdd(){
+        let inputNumberOne = document.getElementById("numberOne").value;
+        let inputNumberTwo = document.getElementById("numberTwo").value;
+        let numberOne = parseInt(inputNumberOne);
+        let numberTwo = parseInt(inputNumberTwo);
+        let result;
+        result = numberOne + numberTwo;
+        document.getElementById("result").innerHTML = result;
+  }
+  function mySub(){
+    let inputNumberOne = document.getElementById("numberOne").value;
+    let inputNumberTwo = document.getElementById("numberTwo").value;
+    let numberOne = parseInt(inputNumberOne);
+    let numberTwo = parseInt(inputNumberTwo);
+    let result;
+    result = numberOne - numberTwo;
+    document.getElementById("result").innerHTML = result;
+  }
+  function myMul(){
+    let inputNumberOne = document.getElementById("numberOne").value;
+    let inputNumberTwo = document.getElementById("numberTwo").value;
+    let numberOne = parseInt(inputNumberOne);
+    let numberTwo = parseInt(inputNumberTwo);
+    let result;
+    result = numberOne * numberTwo;
+    document.getElementById("result").innerHTML = result;
+  }
+  function myDiv(){
+    let inputNumberOne = document.getElementById("numberOne").value;
+    let inputNumberTwo = document.getElementById("numberTwo").value;
+    let numberOne = parseInt(inputNumberOne);
+    let numberTwo = parseInt(inputNumberTwo);
+    let result;
+    result = numberOne / numberTwo;
+    document.getElementById("result").innerHTML = result;
+  }
+</script>
+</body>
+</html>
