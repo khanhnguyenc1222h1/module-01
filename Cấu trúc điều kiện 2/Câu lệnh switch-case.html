@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu lệnh switch-case</title>
+</head>
+<body>
+<input id="month" type="number" min="1" max="12" placeholder="nhập tháng" style="width:100px">
+<button onclick="checkMonth()">Kiểm tra</button>
+<p id="result">mục hiển thị kết quả</p>
+<script>
+    function checkMonth(){
+        let number = document.getElementById('month').value;
+        let result;
+        switch(number){
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                result = document.getElementById('result').innerHTML = 'kết quả: ' + 'tháng ' + number + ' có 31 ngày' ;
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                result = document.getElementById('result').innerHTML = 'kết quả: ' + 'tháng ' + number + ' có 30 ngày' ;
+                break;
+            case '2':
+                result = document.getElementById('result').innerHTML = 'kết quả: ' + 'tháng ' + number + ' có 28 hoặc 29 ngày' ;
+                break;
+            default:
+                document.getElementById('result').innerHTML = 'kết quả: ' + 'tháng ' + number + ' là sai giá trị' ;
+        }
+    }
+</script>
+</body>
+</html>
