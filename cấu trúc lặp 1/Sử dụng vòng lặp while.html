@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng vòng lặp while</title>
+    <style>
+        input{
+            padding:20px;
+            margin:1px 8px 1px 1px;
+        }
+    </style>
+</head>
+<body>
+<h4>Sử dụng vòng lặp while</h4>
+<div>
+<input type="button" value="Bài 1" onclick="bai1()">
+<input type="button" value="Bài 2" onclick="bai2()">
+</div>
+<script>
+    "use trick"
+    function bai1() {
+        let num;
+        let total = 0;
+        while (num != -1) {
+            num = +prompt("nhập lại một số khác");
+            total += num;
+        }
+        total++;
+        alert(total);
+    }
+    function bai2(){
+        let i = 0;
+        while( i < 100){
+            document.write("<hr width=" + i + "%>");
+            i++;
+        }
+    }
+</script>
+</body>
+</html>
