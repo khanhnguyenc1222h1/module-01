@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bảng cửu chương</title>
+</head>
+<body>
+<script>
+  let i = 1;
+  let j = 2;
+  let sout = "<table border='1' width='100%' cellpadding='6' cellspacing='3'>";
+  while(i < 10) {
+      sout = sout + "<tr>";
+      while (j < 10) {
+          sout = sout + "<td>" + j + " x " + i + " = " + j * i + "</td>";
+          j++;
+      }
+      j = 2;
+      i++;
+      sout = sout + "</tr>";
+  }
+  sout = sout + "</table>";
+  document.write(sout);
+</script>
+</body>
+</html>
