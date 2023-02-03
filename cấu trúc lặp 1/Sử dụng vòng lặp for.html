@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng vòng lặp for</title>
+</head>
+<body>
+<div>hiển thị chuỗi ""The number: N" với "N" là số từ 1 đến 5 </div>
+<label id="buoc1"></label>
+<input type="button" value="Enter" onclick="myObj()"><br><br>
+<input type="text" placeholder="number" title="number" id="kh">
+<input type="button" onclick="myObs()" value="Enter"><br><br>
+<div id="buoc2"></div>
+<script>
+    function myObj() {
+        let text = "";
+        for (let i = 1; i < 6; i++) {
+            text += "The number is: " + i + "<br>";
+        }
+        document.getElementById('buoc1').innerHTML = text;
+    }
+    function myObs(){
+        let numberObs = document.getElementById('kh').value;
+        let result = 0;
+            for(let j = 0 ; j <= numberObs ; j++){
+               result += j;// result = resutl + j;
+            }
+        document.getElementById('buoc2').innerHTML = "kết quả " + result;
+    }
+</script>
+</body>
+</html>

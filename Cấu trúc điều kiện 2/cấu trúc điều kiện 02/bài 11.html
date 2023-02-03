@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 11</title>
+</head>
+<body>
+<h3>Thuế thu nhập cá nhân phải nộp</h3>
+<label>Tổng thu nhập cá nhân</label><br>
+<input type="text" placeholder="20,000,000" id="ttn" title="0">
+<p></p>
+<label>Số người phụ thuộc</label><br>
+<input type="number" min="0" placeholder="0" id="npt" title="0">
+<input type="button" onclick="myObj()" value="Enter">
+<p>Thuế TNCN phải nộp: <span id="kq"></span></p>
+<table border="1">
+    <tr>
+        <th>thứ tự bậc</th>
+        <th>số tiền</th>
+        <th>phần trăm</th>
+    </tr>
+    <tr>
+        <td>bậc 1</td>
+        <td>dưới 5 triệu</td>
+        <td>tính  5%</td>
+    </tr>
+    <tr>
+        <td>bậc 2</td>
+        <td>dưới 10 triệu</td>
+        <td>tính 10%</td>
+    </tr>
+    <tr>
+        <td>bậc 3</td>
+        <td>dưới 18 triệu</td>
+        <td>tính 15%</td>
+    </tr>
+    <tr>
+        <td>bậc 4</td>
+        <td>dưới 32 triệu</td>
+        <td>tính 20%</td>
+    </tr>
+    <tr>
+        <td>bậc 5</td>
+        <td>dưới 52 triệu</td>
+        <td>tính 25%</td>
+    </tr>
+    <tr>
+        <td>bậc 6</td>
+        <td>dưới 80 triệu</td>
+        <td>tính 30%</td>
+    </tr>
+    <tr>
+        <td>bậc 7</td>
+        <td>trên 80 triệu</td>
+        <td>tính 35%</td>
+    </tr>
+</table>
+<script>
+  function myObj(){
+      // let bac1,bac2,bac3,bac4,bac5,bac6,bac7;
+    let bac1 = 0;
+    let bac2 = 0;
+    let bac3 = 0;
+    let bac4 = 0;
+    let bac5 = 0;
+    let bac6 = 0;
+    let bac7 = 0;
+    let mySelf = 11000000;
+    let numberNpt = document.getElementById('npt').value;
+    let numberTtn = document.getElementById('ttn').value;
+    let thueN = numberTtn - mySelf - (numberNpt * 4400000);
+    if(thueN <= 5000000){
+      bac1 = thueN * 5/100;
+    }else if(thueN <= 10000000){
+        bac2 = 5000000 * 5/100 + (thueN - 5000000) * 10/100;
+      }else if(thueN <= 18000000){
+          bac3 = 5000000 * 5/100 + (10000000 - 5000000) * 10/100 + (thueN - 10000000) * 15/100;
+        }else if(thueN <= 32000000){
+            bac4 = 5000000 * 5/100 + (10000000 - 5000000) * 10/100 + (18000000 - 10000000) * 15/100 + (thueN - 18000000) * 20/100;
+          }else if(thueN <= 52000000){
+              bac5 = 5000000 * 5/100 + (10000000 - 5000000) * 10/100 + (18000000 - 10000000) * 15/100 + (32000000 - 18000000) * 20/100 + (thueN-32000000) * 25/100;
+            }else if(thueN <= 80000000){
+                bac6 = 5000000 * 5/100 + (10000000 - 5000000) * 10/100 + (18000000 - 10000000) * 15/100 + (32000000 - 18000000) * 20/100 + (52000000-32000000) * 25/100 + (thueN - 52000000) * 30/100;
+              }else if(thueN > 80000000){
+                    bac7 = 5000000 * 5/100 + (10000000 - 5000000) * 10/100 + (18000000 - 10000000) * 15/100 + (32000000 - 18000000) * 20/100 + (52000000-32000000) * 25/100 + (80000000 - 52000000) * 30/100 + (thueN - 80000000) * 35/100;
+                }
+    let sumBac = bac1 + bac2 + bac3 + bac4 + bac5 + bac6 + bac7;
+        document.getElementById('kq').innerHTML = sumBac + " vnđ";
+              }
+
+</script>
+</body>
+</html>

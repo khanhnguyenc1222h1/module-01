@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 06</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhập giá tri 'a'"));
+    let b = parseInt(prompt("nhập giá tri 'b'"));
+    let x = -b/a;
+        if (a == 0 && b == 0) {
+            document.write("phương trình vô số nghiệm");
+        } else if (a != 0 && b == 0) {
+            document.write("phương trinh có nghiệm x = 0");
+        } else if (a != 0 && b != 0) {
+            document.write("phương trình có nghiệm x = " + x);
+        }
+</script>
+</body>
+</html>

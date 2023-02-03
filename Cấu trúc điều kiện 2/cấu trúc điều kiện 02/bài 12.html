@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 12</title>
+</head>
+<body>
+<h3>công cụ tính khoản vay</h3>
+<ol>
+  <li>
+    <label>số tiền vay</label>
+      <input type="text" id="loan" placeholder="vnd" title="loan" style="text-align: center;">
+      <label>VND</label>
+  </li><br>
+    <li>
+        <label>lãi suất</label>
+        <input type="number" min="0" id="percent" title="percent" placeholder="%" style="text-align:center;">
+        <label>%</label>
+    </li><br>
+    <li>
+        <label>thời gian vay</label>
+        <input type="number" min="1" max="12" id="month" placeholder="month" title="month" style="text-align:center;">
+        <label>tháng</label>
+    </li>
+</ol>
+<input type="button" value="Enter" onclick="myFunction()" style="margin-left:100px;"><br><br>
+<table border="1">
+    <tr>
+        <th>tháng</th>
+        <th>lãi phải trả</th>
+        <th>gốc phải trả</th>
+        <th>số tiền góc cộng lãi phải trả</th>
+    </tr>
+    <tr style="height:25px;">
+        <td style="text-align: center;"><span id="number"></span></td>
+        <td><span id="lpt1"></span></td>
+        <td><span id="gpt1"></span></td>
+        <td><span  id="stpt1"></span></td>
+    </tr>
+</table>
+<script>
+    function myFunction(){
+        let numberLoan = document.getElementById('loan').value;
+        let numberPercent = document.getElementById('percent').value;
+        let numberMonth = document.getElementById('month').value;
+        let everyMonth = numberLoan * ((numberPercent /100)/12);
+        let addMonth = everyMonth * numberMonth;
+        for(let i = 0 ; i <= numberMonth ; i++){
+            // everyMonth = numberLoan;
+            document.getElementById('number').innerHTML = numberMonth;
+            document.getElementById('gpt1').innerHTML = numberLoan;
+            document.getElementById('lpt1').innerHTML = addMonth;
+            // let sumMonthLoan = number(everyMonth) + numberLoan;
+            document.getElementById('stpt1').innerHTML = eval(everyMonth + numberLoan);
+
+
+            // switch(numberMonth){
+            //     case 1:
+            //         let month1 = numberLoan * ((numberPercent /100)/12);
+            //         document.getElementById('lpt1').innerHTML = month1;
+            //     case 2:
+            //         numberLoan += month1;
+            //         let month2 = ( + numberLoan) * ((numberPercent /100)/12);
+            //         document.getElementById('lpt2').innerHTML = month2;
+            //     case 3:
+            //         numberLoan = month2;
+            //         let month3 = numberLoan * ((numberPercent /100)/12);
+            //         document.getElementById('lpt3').innerHTML = month3;
+            //         break;
+            // }
+        }
+    }
+</script>
+</body>
+</html>

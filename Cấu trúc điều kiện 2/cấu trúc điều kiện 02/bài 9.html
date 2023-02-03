@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 09</title>
+</head>
+<body>
+<label>a:</label>
+<input type="text" id="A" required>
+<label>b:</label>
+<input type="text" id="B" required>
+<label>c:</label>
+<input type="text" id="C" required>
+<input type="button" onclick="testBox()" value="Enter">
+<h3 id="pth"></h3>
+<script>
+  function testBox(){
+    let testA = document.getElementById('A').value;
+    let testB = document.getElementById('B').value;
+    let testC = document.getElementById('C').value;
+      if((testA + testB > testC) && (testA + testC > testB) && (testB + testC > testA)){
+        document.getElementById('pth').innerHTML = "đây là ba cạnh của một tam giác";
+      }else{document.getElementById('pth').innerHTML = "đây không phải ba cạnh của tam giác";}
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 10</title>
+</head>
+<body>
+<form>
+    <fieldset style="width:80px;">
+<label>Số điện mới</label><br>
+<input type="text" id="electricNew" placeholder="kw"><br><br>
+<label>Số điện cũ</label><br>
+<input type="text" id="electricOld" placeholder="kw" ><br><br>
+        <div style="text-align: center;"><input type="button" value="Enter" onclick="testE()" ></div><br><br>
+        <div>
+            <hr>
+            <p id="vd1"></p>
+    <p id="vd2"></p>
+        </div>
+</fieldset>
+</form>
+<script>
+    // 100 kWh đầu giá 1000
+    // từ kWh 101 – 150 giá 1200
+    // từ kWh 151 – 200 giá 2000
+    // từ 201 trở lên giá 2500
+    function testE(){
+        let sdm = document.getElementById('electricNew').value;
+        let sdc = document.getElementById('electricOld').value;
+        let numberKw = sdm - sdc;
+        let result;
+        if(numberKw <= 100){
+            result = 1000 * numberKw;
+        }else if(numberKw <= 150 && numberKw >= 101){
+            result = numberKw * 1200;
+        }else if(numberKw <= 200 && numberKw >= 151){
+            result = numberKw * 2000;
+        }
+        else if(numberKw > 201){result = numberKw * 2500;}
+        document.getElementById('vd1').innerHTML = "số kw điện tiêu thụ là: " + numberKw + "kw";
+        document.getElementById('vd2').innerHTML = "Số tiền phải trả là: " + result + "vnđ";
+    }
+</script>
+</body>
+</html>
