@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro Games Simple</h3>
+<!--<input type="button"  onclick="changeValue();" value="Change Value x" >-->
+<!--<input type="button"  onclick="changeValues();" value="Change Value o" >-->
+<p id="carogame"></p>
+<script>
+        let b = document.getElementById('carogame');
+        let board = [];
+        let data = "";
+        for(let i = 0 ; i < 5 ; i++){
+            board[i] = new Array(0,0,0,0,0);
+        }
+        for(let i = 0 ; i < 5 ; i++){
+            data += "<br>";
+            for(let j = 0 ; j < 5 ; j++){
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += "<br><br><input type='button' value='Change Value x' onclick='changeValue()'>";
+        // data += "<br><br><input type='button' value='Change Value y' onclick='changeValues()'>";
+        b.innerHTML = data;//xuất ra screen
+        function changeValue(){
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            data = "";
+            board[positionX][positionY] = "x";
+            for(let i = 0 ; i < 5 ; i++){
+                data += "<br/>";
+                for(let j = 0 ; j < 5 ; j++){
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
+            }
+    data += "<br><br><input type='button' value='Change Value x' onclick='changeValue()'> ";
+    // data += "<br><br><input type='button' value='Change Value y' onclick='changeValues()'> ";
+            b.innerHTML = "<hr width='160px' align='left' />" + data;
+        }
+        // function changeValues(){
+        //     let positionX = prompt("X: ");
+        //     let positionY = prompt("Y: ");
+        //     data = "";
+        //     board[positionX][positionY] = "o";
+        //     for(let i = 0 ; i < 5 ; i++){
+        //         data += "<br/>";
+        //         for(let j = 0 ; j < 5 ; j++){
+        //             data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        //         }
+        //     }
+        //     // data += "<br><br><input type='button' value='Change Value x' onclick='changeValue()'> ";
+        //     // data += "<br><br><input type='button' value='Change Value y' onclick='changeValues()'> ";
+        //     b.innerHTML = "<hr width='160px' align='left' />" + data;
+        // }
+</script>
+</body>
+</html>
