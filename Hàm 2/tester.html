@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tester</title>
+</head>
+<body>
+<script>
+  let number = parseInt(prompt("Nhập số cần check "));
+  isPrime(number)
+
+  function isPrime(number){
+    let count = 0; // đếm số ước của số đang check
+    let isPrime = false;
+
+    if (number == 0) {
+      alert(number + " không là số nguyên tố")
+    } else {
+      for ( let i = 1; i <= number; i++) {
+        if(number % i == 0) {
+          count += 1;
+        }
+      }
+
+      if (count ==2 ) {
+        isPrime = true
+      }
+
+      if (isPrime) {
+        alert(number + " là số nguyên tố")
+      } else {
+        alert (number + " không là số nguyên tố")
+      }
+    }
+  }
+  // ------------------------//
+  ////////////////////////////
+  let numbers = Number(prompt("Nhập n số nguyên tố đầu tiên: "));//số lượng SNT cần tìm
+  let check = 0; //số lượng SNT đã tìm thấy
+  let count = 0; //số lượng ước số của 1 số cần kiểm tra phải SNT hay không
+
+  for (let i = 2; i < 1000; i++) {
+          for (let j = 1; j <= i; j++) {
+              if (i % j === 0)
+                  count += 1;
+          }
+          if (count === 2) {
+              document.write(i + "<br>");
+              check++;
+          }
+          else {
+          break;
+      }
+  }
+</script>
+
+</body>
+</html>

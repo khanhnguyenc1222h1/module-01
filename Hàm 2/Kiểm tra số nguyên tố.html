@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+  let numbers = parseInt(prompt("Enter a number"));
+  myFunction(numbers);
+function myFunction(numbers){
+    let count = 0;
+    if(numbers >= 2){
+        for(let i = 1 ; i <= numbers ; i++){
+            if(numbers % i === 0){
+                count++;
+            }
+        }
+    }
+
+    if(count === 2){
+        alert("This is a prime number " + numbers);
+    }else{
+        alert("This is not a prime number " + numbers);
+    }
+
+}
+
+</script>
+</body>
+</html>
