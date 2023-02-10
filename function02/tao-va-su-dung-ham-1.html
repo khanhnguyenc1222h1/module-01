@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<div><strong>Bài 1:</strong>Tạo hàm alertMessage() hiển thị hộp thoại chứa chuỗi  "Xin chao".
+    Gọi hàm từ trong phần body của trang web.</div>
+<!--<input oninput="alertMessage(this.value)" >-->
+<input type="button" id="btn" value="Click me" ><br><br>
+
+<div><strong>Bài 2:</strong> Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.
+    Gọi hàm từ trong phần body của trang web và hiển thị kết quả lên màn hình.</div>
+<input type="button" id="btn2" value="Click me"><span id="result2" style="margin-left:40px;"></span><br><br>
+
+<div><strong>Bài 3:</strong> Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng.
+    Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.</div>
+<input type="button" id="btn3" value="Click me" ><span id="result3" style="margin-left:40px;"></span><br><br>
+
+<div><strong>Bài 4:</strong>Thêm các hàm alert() vào những vị trí thích hợp trong đoạn mã sau để bạn có thể nhìn thấy giá trị của biến result trước và sau lời gọi hàm.
+    Đoạn mã có dạng như sau:</div>
+<input type="button" id="btn4" value="Click me" >
+
+<div><strong>Bài 5:</strong>Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao sau: Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus.
+    Tạo một mảng khác với bảy phần tử dạng chuỗi có giá trị là tên các chòm sao tương ứng chứa các ngôi sao: Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major
+    và Leo. Tiếp theo, tạo một hàm nhận vào một tham số dạng chuỗi duy nhất. Trong hàm này, duyệt qua mảng thứ nhất để tìm tên ngôi sao.
+    Nếu tìm thấy, trả lại giá trị tương ứng với chỉ số đó ở mảng thứ hai. Nói cách khác, trả lại tên chòm sao của ngôi sao đó.
+    Trong phần  của trang web, dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao, sau đó gọi hàm với thông tin đầu vào.
+    Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào. Cho kết quả hiển thị trên màn hình.</div>
+<input type="button" id="btn5" value="Click me" >
+<script>
+    //bài 1 hiện hộp thoại xin chào
+    let obj = document.getElementById('btn');
+    obj.addEventListener('click',function alertMessage() {
+        alert('Xin chao');
+    });
+
+    //bài 2 cho số nhập vào cộng thêm 1
+    let obj2 = document.getElementById('btn2');
+    obj2.addEventListener('click',function(){
+        let ks = parseInt(prompt("Enter a number"));
+        let rs = 0;
+        for(let i = 0 ; i <= ks ; i++){
+            rs++;
+        }
+        document.getElementById('result2').innerHTML = rs;
+    } );
+    //bài 3 so sánh a và b
+    function do_something(a,b){
+        if(a>b){
+            return a + " là số lớn nhất";
+        }else{
+            return a + b;
+        }
+    }
+
+    let obj3 = document.getElementById('btn3');
+    obj3.addEventListener('click',function(){
+        let a = parseInt(prompt("Enter a number a"));
+        let b = parseInt(prompt("Enter a number b"));
+        let ks3 = do_something(a,b);
+        alert(ks3);
+    });
+    //bài 4
+    let obj4 = document.getElementById('btn4');
+    obj4.addEventListener('click',function(){
+        result = 0;
+        alert("a number before function: " + result);
+        result = addNumbers();
+        alert("a number after function: " + result);
+    });
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+    }
+
+    //bài 5 làm việc với mảng
+    let obj5 = document.getElementById('btn5');
+    obj5.addEventListener('click',function checkArr(){
+        let str = prompt('Enter a string');
+        let result  = myArr(str);
+        alert(str + ' is ' + result);
+    });
+    function myArr(str){
+        let arr1 = ['Polaris','Aldebaran','Deneb','Vega','Altair','Dubhe','Regulus'];
+        let arr2 = ['Ursa Minor','Tarurus','Cygnus','Lyra','Aquila','Ursa Major','Leo'];
+        let result;
+        let index = '';
+        for(let i = 0 ; i < arr1.length ; i++){
+            if(str == arr1[i]){
+
+                for(let j = 0  ; j < arr2.length ; j++){
+                    if(i == j){
+                        result = arr2[j];
+                    }
+                }
+            }
+        } if (result == undefined) {
+            result = 'not found star';
+        }
+        return result;
+    }
+</script>
+</body>
+</html>
