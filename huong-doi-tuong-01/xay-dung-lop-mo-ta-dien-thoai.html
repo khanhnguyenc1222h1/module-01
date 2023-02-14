@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+<script>
+  let Mobile = function(battery, composeMemory, inboxMemory, sentMemory, status){
+      this.battery = battery; //pin
+      this.composeMemory = composeMemory; //vùng nhớ soạn tin nhắn
+      this.inboxMemory = inboxMemory; //vùng nhớ tin nhắn đến
+      this.sentMemory = sentMemory; //vùng nhớ tin nhắn đã gửi
+      this.status = status; //trạng thái: bật/tắt
+      this.checkMobile = function(){
+          return this.status;
+      }
+      this.turnOn = function(){
+          if(!this.checkMobile()){
+              if(this.battery > 0 && this.battery < 100){
+                  this.useMobileFunc();
+                  this.status = true;
+              }
+          }
+      }
+      this.turnOf = function(){
+          if(this.checkMobile){
+              if(this.battery < 0 && this.battery > 100){
+                  this.status = false;
+              }
+          }
+
+      }
+      this.changeBattery = function(){
+            this.battery++;
+      }
+      this.composeMessage = function(message){//soạn tin nhắn
+          if(this.turnOn) {
+              this.useMobileFunc();
+              this.composeMemory = message;//vùng nhớ soạn tin nhắn
+          }
+      }
+
+      this.receiveMessage = function(){//nhận tin nhắn
+          if(this.turnOn){
+              this.useMobileFunc();
+              return "Bạn đã nhận được một tin nhắn";
+          }
+      }
+
+      this.sendMessage = function(){//gửi tin nhắn
+            if(this.turnOn){
+                this.useMobileFunc();
+                return "Tin nhắn đã được gửi";
+            }
+      }
+
+      this.readMessage = function(){//xem tin nhắn
+            if(this.turnOn){
+                this.useMobileFunc();
+                return this.inboxMemory;//vùng nhớ tin nhắn đến
+            }
+      }
+      this.useMobileFunc = function(){
+          this.battery--;
+      }
+  }
+  function main() {
+      let nokia = new Mobile(80, '', '', '', true);//battery, composeMemory, inboxMemory, sentMemory, status
+      let iphone = new Mobile(90, '', '', '', true);
+      nokia.composeMessage(prompt(""));
+      nokia.sendMessage();
+      let checkMessage = iphone.receiveMessage();
+      if (checkMessage == '') {
+          alert("Message is " + nokia.readMessage());
+      }
+  }
+        main();
+</script>
+</body>
+</html>
