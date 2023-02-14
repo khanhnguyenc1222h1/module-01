@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+  function Temperature(celsius){
+    this.celsius = celsius;
+    this.celsiusToFahrenheit = function(){//chuyển độ C sang độ F
+        return (9/5) * this.celsius + 32;
+    }
+    this.celsiusToKevin = function(){//chuyển độ C sang độ K
+        return this.celsius +  273.15;
+    }
+  }
+  let number = +prompt("Enter a number");
+  if(number > -273) {
+      let celsius = new Temperature(number);
+      document.write("Celsius converts to Fahrenheit " + celsius.celsiusToFahrenheit());
+      document.write("<br>");
+      document.write("Celsius converts to Kevin " + celsius.celsiusToKevin());
+  }else{
+      document.write("again");
+  }
+</script>
+</body>
+</html>
