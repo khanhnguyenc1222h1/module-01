@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+  let Apple = function(weight){
+      this.weight = weight;
+      this.decrease = function(){
+          if(this.isEmpty()){
+              alert("táo đã hết");
+          }else{
+              this.weight--;
+          }
+      }
+      this.isEmpty = function(){
+        if(this.weight <= 0){
+          return true;
+        }else{
+          return false;
+        }
+      }
+      this.getWeight = function(){
+        return this.weight;
+      }
+  }
+  let Human = function(name,gender,weight){
+    this.name = name;
+    this.gender = gender;
+    this.weight = weight;
+    this.isMale = function(){
+      if(this.gender == "male"){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    this.getGender = function() {
+      if (this.isMale()) {
+        return "male";
+      } else {
+        return "female";
+      }
+    }
+    this.checkApple = function(){
+      return apple.isEmpty();
+    }
+    this.eat = function(){
+        if(apple.weight > 0){
+            this.weight++;
+            apple.decrease();
+        }else{
+            return "Apple is over";
+        }
+    }
+    this.say = function(String){
+        return console.log(String);
+    }
+    this.getName = function(){
+        return this.name;
+    }
+    this.setName = function(name){
+        this.name = name;
+    }
+    this.getWeight = function(){
+        return this.weight;
+    }
+    this.setWeight = function(weight){
+        this.weight = weight;
+    }
+  }
+  let apple = new Apple(1);
+  let adam = new Human("adam","male",70);
+  let eva = new Human("eva","female",48);
+  function createAdam(){
+      document.write("Name: " + adam.getName() +"<br>"+ "sex: " + adam.gender +"<br>"+ "body weight: " + adam.getWeight() +"<br>" + "The number of apples is " + apple.getWeight() +"<br>");
+  }
+  function createEva(){
+      document.write("Name: " + eva.getName() +"<br>"+ "sex: " + eva.gender +"<br>"+ "body weight: " + eva.getWeight() +"<br>"+ "The number of apples is " + apple.getWeight() +"<br>");
+  }
+
+    createAdam();
+    eva.setWeight(50);
+    eva.eat();
+    console.log(eva.eat());
+    createEva();
+  eva.eat();
+  createEva();
+
+</script>
+</body>
+</html>
